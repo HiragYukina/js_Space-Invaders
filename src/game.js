@@ -62,23 +62,33 @@ let playerCollision = () => {
          * 4-----3
          */
 
-        const bX1 = bullet.x
-        const bY1 = bullet.y
+        const bullePosition = [{
+                x: bullet.x,
+                y: bullet.y
+            },
+            {
+                x: bullet.x + bullet.width,
+                y: bullet.y
+            },
+            {
+                x: bullet.x,
+                y: bullet.y + bullet.height
+            },
+            {
+                x: bullet.x,
+                y: bullet.y + bullet.height
+            }
+        ]
 
-        const bX2 = bullet.x + bullet.width
-        const bY2 = bY1
 
-        const bX3 = bX2
-        const bY3 = bY1 + bullet.height
+        /**
+         * 外積の公式
+         */
 
-        const bX4 = bX1
-        const bY4 = bY3
-
-
-/*
-            if (x + y < r) {
-                enemyBullets.splice(c, 1)
-            }*/
+        /*
+                    if (x + y < r) {
+                        enemyBullets.splice(c, 1)
+                    }*/
         c++
 
     })
